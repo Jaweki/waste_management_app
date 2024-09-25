@@ -3,13 +3,13 @@ import React, { useState } from 'react'
 const ratings = [1, 2, 3, 4, 5]
 
 const InputForm = () => {
-    const [category, setCategory] = useState();
-    const [rating, setRating] = useState(0);
+    const [category, setCategory] = useState(undefined);
+    const [reusability, setReusability] = useState(0);
     const [refurb, setRefurb] = useState(0);
 
-    const [file, setFile] = useState();
-    const [imageData, setImageData] = useState();
-    const [dropOffPoint, setDropOffPoint] = useState();
+    const [file, setFile] = useState(undefined);
+    const [imageData, setImageData] = useState(undefined);
+    const [dropOffPoint, setDropOffPoint] = useState("");
 
     const handleFileChange = (e) => {
         const imageFile = e.target.files[0]
@@ -17,18 +17,26 @@ const InputForm = () => {
         setImageData(URL.createObjectURL(imageFile))
     }
 
+    const resetInputs = () => {
+        setCategory(undefined)
+        setReusability(0)
+        setRefurb(0)
+        setFile(undefined)
+        setImageData(undefined)
+        setDropOffPoint("")
+    }
+
     const handleSubmit = async () => {
-        if (category && rating && refurb && file && dropOffPoint) {
+        if (category && reusability && refurb && file && dropOffPoint) {
             // submit the file
             const payload = new FormData()
 
             payload.append("category", category)
-            payload.append("rating", rating)
+            payload.append("reusability", reusability)
             payload.append("refurb", refurb)
             payload.append("image", file)
             payload.append("location", dropOffPoint)
 
-            console.log("payload:", payload)
             const result = await fetch("http://localhost:4000/new/waste", {
                 method: "POST",
                 body: payload
@@ -37,7 +45,8 @@ const InputForm = () => {
             const status = result.status 
 
             if (status === 201) {
-                alert("New item created successfully.")
+                alert("New waste registered.")
+                resetInputs()
             } else {
                 alert("Something went wrong.")
             }
@@ -54,7 +63,7 @@ const InputForm = () => {
         {/* 1. category */}
         <div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
             <span>What category is the waste: </span>
-        <select onChange={(e) => setCategory(e.target.value)}>
+        <select value={category} onChange={(e) => setCategory(e.target.value)}>
             <option>--select a category--</option>
             <option value="electronic">Electronics</option>
             <option value="clothing">Clothing</option>
@@ -70,8 +79,8 @@ const InputForm = () => {
         <div style={{ display: "flex", flexDirection: "row", gap: "5px" }} >
             {ratings.map((value, index) => (
                 <div key={`${value}-${index}`} style={{ display: "flex", flexDirection: "column", alignItems: "center" }} >
-                    <button type='button' onClick={() => { setRating(value) }} style={{ width: "20px", height: "20px", padding: "1px", border: "1px solid black", borderRadius: "50%", cursor: "pointer" }} 
-                    className={`${rating >= value ? "illuminate-btn" : ""}`} />
+                    <button type='button' onClick={() => { setReusability(value) }} style={{ width: "20px", height: "20px", padding: "1px", border: "1px solid black", borderRadius: "50%", cursor: "pointer" }} 
+                    className={`${reusability >= value ? "illuminate-btn" : ""}`} />
                     <span>{value}</span>
                 </div>
             ))}
@@ -93,7 +102,7 @@ const InputForm = () => {
         {/* 4. uploading image */}
         <div style={{ display: "flex", flexDirection: "column", gap: "5px"}}>
         <input type='file' onChange={handleFileChange} />
-        <img src={imageData} style={{ maxWidth: "150px", maxHeight: "200px" }} />
+        <img src={imageData} style={{ maxWidth: "200px", maxHeight: "125px" }} />
         </div>
         {/* 5. input dropoff point */}
         <div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>

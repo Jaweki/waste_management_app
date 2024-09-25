@@ -17,7 +17,11 @@ const mainRouter = createBrowserRouter([
         element: <InputForm />
       },
       {
-        path: "/refub",
+        path: "/refurb",
+        element: <Showcase />
+      }, 
+      {
+        path: "/non-refurb",
         element: <Showcase />
       }
     ]

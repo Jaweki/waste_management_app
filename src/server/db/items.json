@@ -1,16 +1,34 @@
 [
   {
+    "id": "m1hjsvfft14",
     "category": "electronic",
-    "rating": "3",
+    "reusability": "3",
     "refurb": "5",
-    "location": "ldldlld",
-    "imageUrl": "https://res.cloudinary.com/jaweki-cloudinary/image/upload/v1727136796/zkntm9nisstno7fwzdwj.jpg"
+    "location": "nairobi cbd station",
+    "imageUrl": "https://res.cloudinary.com/jaweki-cloudinary/image/upload/v1727249579/wgn5pd7cgonn2jdmhgll.jpg"
   },
   {
-    "category": "electronic",
-    "rating": "3",
-    "refurb": "5",
-    "location": "ldldlld",
-    "imageUrl": "https://res.cloudinary.com/jaweki-cloudinary/image/upload/v1727136842/o2wfkmiru8on7xrksbui.jpg"
+    "id": "m1hjuuw6kpj",
+    "category": "clothing",
+    "reusability": "4",
+    "refurb": "3",
+    "location": "meru town station",
+    "imageUrl": "https://res.cloudinary.com/jaweki-cloudinary/image/upload/v1727249672/t9zzep8hjnmcoytblvwx.jpg"
+  },
+  {
+    "id": "m1hjwujwzmf",
+    "category": "utensil",
+    "reusability": "1",
+    "refurb": "2",
+    "location": "Embu town station ",
+    "imageUrl": "https://res.cloudinary.com/jaweki-cloudinary/image/upload/v1727249765/xhfjex71ftxj9zywufve.jpg"
+  },
+  {
+    "id": "m1hjxpgw9uj",
+    "category": "furniture",
+    "reusability": "4",
+    "refurb": "4",
+    "location": "isolo town station",
+    "imageUrl": "https://res.cloudinary.com/jaweki-cloudinary/image/upload/v1727249803/bakl7wqqyd597tr77uof.jpg"
   }
 ]

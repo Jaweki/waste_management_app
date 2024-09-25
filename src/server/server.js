@@ -15,6 +15,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors())
 app.use(express.static('public'));
 
+function generateId() {
+    return Date.now().toString(36) + Math.random().toString(36).substring(2, 5);
+}
+
 // Test route
 app.get("/refurb", (req, res) => {
     const filePath = path.join(__dirname, "/db/items.json");
@@ -23,8 +27,8 @@ app.get("/refurb", (req, res) => {
         if (fileContent) {
             try {
                 const existingData = JSON.parse(fileContent);
-                const filtered = existingData.filter(item => item.refurb >= 3)
-                console.log("sending to client: ", filtered)
+                const filtered = existingData.filter(item => item.reusability >= 3 && item.refurb >= 3)
+                // console.log("sending to client: ", filtered)
                 res.status(200).json(filtered);
             } catch (err) {
                 console.error("Error parsing JSON:", err);
@@ -37,6 +41,27 @@ app.get("/refurb", (req, res) => {
     }
 });
 
+app.get("/non-refurb", (req, res) => {
+    try {
+        const filePath = path.join(__dirname, "/db/items.json");
+        if (fs.existsSync(filePath)) {
+            const fileContent = fs.readFileSync(filePath, 'utf8');
+    
+            if (fileContent) {
+                const existingData = JSON.parse(fileContent);
+                const nonRefurbItems = existingData.filter(item => (item.reusability < 3 || item.refurb < 3)) ?? [];
+                res.status(200).json(nonRefurbItems);
+            }
+        } 
+    
+        console.log("File doesn't exist.")
+        res.status(404);
+    } catch (error) {
+        console.log("SERVER FAIL: ", error);
+        res.status(503);
+    }
+})
+
 // Handle form submission with image upload
 app.post("/new/waste", upload.single('image'), (req, res) => {
     const formData = req.body; // Get form data fields
@@ -45,7 +70,7 @@ app.post("/new/waste", upload.single('image'), (req, res) => {
     if (!image) {
         return res.status(400).json({ error: "Image file is required!" });
     }
-    console.log("attempting image upload...");
+    // console.log("attempting image upload...");
 
     // Upload the image to Cloudinary
     cloudinary.uploader.upload_stream((error, result) => {
@@ -54,14 +79,15 @@ app.post("/new/waste", upload.single('image'), (req, res) => {
             return res.status(500).json({ error: "Failed to upload image" });
         }
 
-        console.log("Image uploaded to Cloudinary:", result);
+        // console.log("Image uploaded to Cloudinary:", result);
 
         // Write form data (along with image URL) to JSON file
         const itemData = {
+            id: generateId(),
             ...formData,
             imageUrl: result.secure_url // Use the image URL from Cloudinary
         };
-        console.log("saved item: ", itemData)
+        // console.log("saved item: ", itemData)
 
         try {
             const filePath = path.join(__dirname, "/db/items.json");

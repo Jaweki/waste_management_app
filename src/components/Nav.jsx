@@ -9,8 +9,8 @@ const Nav = () => {
       <input type='text' placeholder='search in app...' style={{ padding: "5px" }} />
       {/* submit new button */}
       <div style={{ display: "flex", flexDirection: "row", gap: "10px"}}>
-      <a href='/refub'>Refub</a>
-      <a href='/non-refub'>Non Refub</a>
+      <a href='/refurb'>Refub</a>
+      <a href='/non-refurb'>Non Refub</a>
       <a href='/new'>New Submit</a>
       </div>
     </nav>
