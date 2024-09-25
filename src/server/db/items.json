@@ -30,5 +30,13 @@
     "refurb": "4",
     "location": "isolo town station",
     "imageUrl": "https://res.cloudinary.com/jaweki-cloudinary/image/upload/v1727249803/bakl7wqqyd597tr77uof.jpg"
+  },
+  {
+    "id": "m1hmdzdiwsn",
+    "category": "electronic",
+    "reusability": "4",
+    "refurb": "5",
+    "location": "nyeri town station",
+    "imageUrl": "https://res.cloudinary.com/jaweki-cloudinary/image/upload/v1727253922/qrax6i4xwvmnupfxvnwf.png"
   }
 ]

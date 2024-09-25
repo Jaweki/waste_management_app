@@ -2,6 +2,7 @@
   "name": "waste-management-app",
   "private": true,
   "version": "0.0.0",
+  "author": "Jack Weru kioni | https://jaweki-portfolio.vercel.com | https://linkedin.com/in/jaweki-dekut",
   "type": "module",
   "scripts": {
     "dev": "vite",
