@@ -30,5 +30,101 @@
     "refurb": "4",
     "location": "isolo town station",
     "imageUrl": "https://res.cloudinary.com/jaweki-cloudinary/image/upload/v1727249803/bakl7wqqyd597tr77uof.jpg"
+  },
+  {
+    "id": "m1hmeaobmpe",
+    "category": "electronic",
+    "reusability": "3",
+    "refurb": "5",
+    "location": "kerugoya pickup station",
+    "imageUrl": "https://res.cloudinary.com/jaweki-cloudinary/image/upload/v1727253935/dg3po0fjimtoeuys2xpe.jpg"
+  },
+  {
+    "id": "m1hmf0zuglx",
+    "category": "electronic",
+    "reusability": "4",
+    "refurb": "3",
+    "location": "kerugoya",
+    "imageUrl": "https://res.cloudinary.com/jaweki-cloudinary/image/upload/v1727253969/bmv4v7rcdcc4fatme5sm.jpg"
+  },
+  {
+    "id": "m1hoh3kt075",
+    "category": "electronic",
+    "reusability": "4",
+    "refurb": "5",
+    "location": "Nchiru station",
+    "imageUrl": "https://res.cloudinary.com/jaweki-cloudinary/image/upload/v1727257425/hsenr6ccjeyxxdiluygk.jpg"
+  },
+  {
+    "id": "m1hoi1htwwo",
+    "category": "electronic",
+    "reusability": "5",
+    "refurb": "4",
+    "location": "Nchiru station",
+    "imageUrl": "https://res.cloudinary.com/jaweki-cloudinary/image/upload/v1727257469/x7vkvoasbvmbhle83h7t.jpg"
+  },
+  {
+    "id": "m1hoiryoocr",
+    "category": "furniture",
+    "reusability": "4",
+    "refurb": "4",
+    "location": "Nchiru station",
+    "imageUrl": "https://res.cloudinary.com/jaweki-cloudinary/image/upload/v1727257504/whagl95stcdebyrqv1mb.jpg"
+  },
+  {
+    "id": "m1hojp3z9kq",
+    "category": "clothing",
+    "reusability": "5",
+    "refurb": "4",
+    "location": "Nchiru station",
+    "imageUrl": "https://res.cloudinary.com/jaweki-cloudinary/image/upload/v1727257546/hei7xaeb3xwg1iafbeqg.jpg"
+  },
+  {
+    "id": "m1hory0lokj",
+    "category": "electronic",
+    "reusability": "5",
+    "refurb": "4",
+    "location": "Nchiru station",
+    "imageUrl": "https://res.cloudinary.com/jaweki-cloudinary/image/upload/v1727257931/bnxzt6ayjl0lkz1qkzua.jpg"
+  },
+  {
+    "id": "m1hosc4d2ki",
+    "category": "clothing",
+    "reusability": "5",
+    "refurb": "4",
+    "location": "Nchiru station",
+    "imageUrl": "https://res.cloudinary.com/jaweki-cloudinary/image/upload/v1727257949/mt5wawhrjaqrccbmcqcm.jpg"
+  },
+  {
+    "id": "m1hoz3yy3hb",
+    "category": "furniture",
+    "reusability": "4",
+    "refurb": "5",
+    "location": "Nchiru station",
+    "imageUrl": "https://res.cloudinary.com/jaweki-cloudinary/image/upload/v1727258266/gipnlrkrczirjbmaneuc.jpg"
+  },
+  {
+    "id": "m1hp0d950kb",
+    "category": "plastic",
+    "reusability": "1",
+    "refurb": "1",
+    "location": "Nchiru station",
+    "imageUrl": "https://res.cloudinary.com/jaweki-cloudinary/image/upload/v1727258324/veljmwiwzulhysmjujxb.jpg"
+  },
+  {
+    "id": "m1hpc95wy6q",
+    "category": "utensil",
+    "reusability": "4",
+    "refurb": "3",
+    "location": "Nchiru station",
+    "imageUrl": "https://res.cloudinary.com/jaweki-cloudinary/image/upload/v1727258879/s2bmnpnhrcynfuwqgb4b.webp"
+  },
+  {
+    "id": "m1hpib1sj7i",
+    "category": "electronic",
+    "reusability": "4",
+    "refurb": "4",
+    "location": "Nchiru station",
+    "imageUrl": "https://res.cloudinary.com/jaweki-cloudinary/image/upload/v1727259161/rxqvt8k56jcrv1oh6o4q.webp"
   }
 ]
